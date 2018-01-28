@@ -5,8 +5,6 @@ class PhoneBookVer02
 	{
 		System.out.println("test");
 		
-		
-		
 	}
 	
 }
