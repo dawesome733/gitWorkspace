@@ -1,12 +1,50 @@
+import java.util.Scanner;
 
 class PhoneBookVer02 
 {
-	public static void main(String[] args)
+	static Scanner keyboard=new Scanner(System.in);
+	
+	public static void showMenu()
 	{
-		System.out.println("test");
-		
-		
-		
+		System.out.println("선택하세요...");
+		System.out.println("1. 데이터 입력 ");
+		System.out.println("2. 프로그램 종료");
+		System.out.print("선택 : ");
 	}
 	
+	public static void readData()
+	{
+		System.out.print("이름 : ");
+		String name=keyboard.nextLine();
+		System.out.print("전화번호 : ");
+		String phoneNumber=keyboard.nextLine();
+		System.out.print("생년월일 : ");
+		String birthday=keyboard.nextLine();
+		
+		PhoneInfo pInfo=new PhoneInfo(name, phoneNumber, birthday);
+		System.out.println("입력된 정보 출력...");
+		pInfo.showPhoneInfo();
+	}
+	
+	public static void main(String[] args)
+	{
+		int choice;
+		
+		while(true)
+		{
+			showMenu();
+			choice=keyboard.nextInt();
+			keyboard.nextLine();
+			
+			switch(choice)
+			{
+			case 1:
+				readData();
+				break;
+			case 2:
+				System.out.println("프로그램을 종료합니다.");
+				return;
+			}
+		}
+	}
 }

@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+class PhoneBookVer02 
+{
+	public static Scanner scanner=new Scanner(System.in);
+	
+	public static void main(String[] args)
+	{
+		int input;
+		
+		while(true)
+		{
+			System.out.println("선택하세요...");
+			System.out.println("1. 데이터 입력 ");
+			System.out.println("2. 프로그램 종료");
+			System.out.print("선택 : ");
+			input=scanner.nextInt();
+			scanner.nextInt();
+			
+			if(input == 2)
+				break;
+			
+			switch(input)
+			{
+			case 1:
+				inputPhoneInfo();
+				break;
+			case 2:
+				break;
+			}
+		}
+	}
+	public static void inputPhoneInfo()
+	{
+		String name;
+		String phoneNumber;
+		String birthday;
+		
+		System.out.print("이름 : ");
+		name=scanner.nextLine();
+		System.out.print("전화번호 : ");
+		phoneNumber=scanner.nextLine();
+		System.out.print("생년월일 : ");
+		birthday=scanner.nextLine();
+		
+		PhoneInfo pInfo=new PhoneInfo(name, phoneNumber, birthday);
+		System.out.println("입력된 정보 출력...");
+		pInfo.showPhoneInfo();
+	}
+}
